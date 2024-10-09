@@ -5,18 +5,29 @@ using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject npc;
+
     [Header("Bar")]
     public Slider playerHealtBar;
     public Slider playerSkillBar;
     public Slider aiHealthBar;
     public Slider aiSkillBar;
 
-    [Header("Text")]
+    [Header("Testing Player Text")]
     public Text playerHPText;
-    public Text aiHPText;
     public Text playerSPText;
-    public Text aiSPText;
+    public Text playerPositionX;
+    public Text playerPositionY;
     public Text playerAttack;
+
+    [Header("Testing NPC Text")]
+    public Text npcHPText;
+    public Text npcSPText;
+    public Text npcPositionX;
+    public Text npcPositionY;
+    public Text npcAttack;
+
     public Text timeText;
 
     public static float timer;
@@ -40,10 +51,16 @@ public class Stats : MonoBehaviour
         aiSkillBar.value = AI.aiSkillsPoint;
 
         playerHPText.text = playerHealtBar.value.ToString();
-        aiHPText.text = aiHealthBar.value.ToString();
         playerSPText.text = playerSkillBar.value.ToString();
-        aiSPText.text = aiSkillBar.value.ToString();
+        playerPositionX.text = player.transform.position.x.ToString();
+        playerPositionY.text = player.transform.position.y.ToString();
         playerAttack.text = Player.playerAttack.ToString();
+
+        npcHPText.text = aiHealthBar.value.ToString();
+        npcSPText.text = aiSkillBar.value.ToString();
+        npcPositionX.text = npc.transform.position.x.ToString();
+        npcPositionY.text = npc.transform.position.y.ToString();
+        npcAttack.text = AIMcts.aiAttack.ToString();
 
         if (GameController.playGame == true)
         {
