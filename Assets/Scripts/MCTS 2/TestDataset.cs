@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestDataset : MonoBehaviour
 {
-    public Dataset dataset;
+    public List<Dataset> listDataset;
 
     public string hpComparision;
     public string hpNPC;
@@ -12,18 +12,23 @@ public class TestDataset : MonoBehaviour
     public bool playerAttack;
     public string positionY;
 
+    public string action;
+
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < dataset.dataCondition.Count; i++)
+        for (int i = 0; i < listDataset.Count; i++)
         {
-            if ((hpComparision == dataset.dataCondition[i].hpComparisionData) &&
-                (hpNPC == dataset.dataCondition[i].hpNPCData) &&
-                (spNPC == dataset.dataCondition[i].spNpcData) &&
-                (playerAttack == dataset.dataCondition[i].playerAttackData) &&
-                (positionY == dataset.dataCondition[i].positionYData))
+            for (int j = 0; j < listDataset[i].dataCondition.Count; j++)
             {
-                Debug.Log(dataset.action);
+                if ((hpComparision == listDataset[i].dataCondition[j].hpComparisionData) &&
+                (hpNPC == listDataset[i].dataCondition[j].hpNPCData) &&
+                (spNPC == listDataset[i].dataCondition[j].spNpcData) &&
+                (playerAttack == listDataset[i].dataCondition[j].playerAttackData) &&
+                (positionY == listDataset[i].dataCondition[j].positionYData))
+                {
+                    action = listDataset[i].action.ToString();
+                }
             }
         }
     }
