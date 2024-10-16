@@ -4179,7 +4179,15 @@ MonoBehaviour:
     m_Bits: 64
   restrict: {fileID: 550454011}
   player: {fileID: 1549604998}
+  listDataset:
+  - {fileID: 11400000, guid: f75078a92f8efbf47b5e0abb83c1e99a, type: 2}
+  - {fileID: 11400000, guid: c2b694e66dc4cdf4899697780524e1c0, type: 2}
+  - {fileID: 11400000, guid: 7e795c228cc4adc47a0d7f9303b6cc43, type: 2}
+  - {fileID: 11400000, guid: 293bc5f4e011e3b4ab8dcddcde7cbe2c, type: 2}
+  - {fileID: 11400000, guid: cbe2d1bb99473df4fbb96bbaa1bbb372, type: 2}
+  - {fileID: 11400000, guid: efa314e7cac131f4b8b8799636037ab4, type: 2}
   state: 0
+  timerWalkToPlayer: 0
 --- !u!50 &918362720
 Rigidbody2D:
   serializedVersion: 4

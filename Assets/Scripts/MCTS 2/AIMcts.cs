@@ -42,9 +42,13 @@ public class AIMcts : MonoBehaviour
     private Rigidbody2D rig;
     private Collider2D coll;
 
+    [Header("Dataset")]
+    public List<Dataset> listDataset;
+
     [Header("Etc")]
     public int state = 0;
     private int attackNumber;
+    private float timerWalkToPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +57,7 @@ public class AIMcts : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         state = 0;
+        timerWalkToPlayer = 0;
     }
 
     // Update is called once per frame
@@ -98,6 +103,8 @@ public class AIMcts : MonoBehaviour
         Blocking();
         Rise();
         FaceRightOrLeft();
+
+        MCTS();
 
         //State if player down
         if (Player.playerDown == true)
@@ -417,5 +424,30 @@ public class AIMcts : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Down", false);
         aiBlockAttack = false;
+    }
+
+    public void MCTS()
+    {
+        if (GameController.playGame)
+        {
+            if (playerDistanceX > attackDistanceX && state == 0 && !Player.playerDown)
+            {
+                if (timerWalkToPlayer < 2)
+                {
+                    timerWalkToPlayer += Time.deltaTime;
+                }
+                if (timerWalkToPlayer >= 2)
+                {
+                    state = 1;
+                    timerWalkToPlayer = 0;
+                }
+            }
+            if (playerDistanceX <= attackDistanceX)
+            {
+                state = 0;
+                anim.SetBool("Forward", false);
+                anim.SetBool("Backward", false);
+            }
+        }
     }
 }
