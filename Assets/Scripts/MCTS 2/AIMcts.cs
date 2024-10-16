@@ -23,6 +23,7 @@ public class AIMcts : MonoBehaviour
 
     [Header("Stats Distance")]
     public float attackDistanceX;
+    public float attackDistanceY;
     public int marginMovement;
     private float playerDistanceX;
     private float playerDistanceY;
@@ -44,6 +45,13 @@ public class AIMcts : MonoBehaviour
 
     [Header("Dataset")]
     public List<Dataset> listDataset;
+
+    [Header("String Parameters")]
+    public string hpComparisioValue;
+    public string hpNpcValue;
+    public string spNpcValue;
+    public bool playerAttackValue;
+    public string positionYValue;
 
     [Header("Etc")]
     public int state = 0;
@@ -104,6 +112,7 @@ public class AIMcts : MonoBehaviour
         Rise();
         FaceRightOrLeft();
 
+        ConvertParameterToString();
         MCTS();
 
         //State if player down
@@ -447,7 +456,66 @@ public class AIMcts : MonoBehaviour
                 state = 0;
                 anim.SetBool("Forward", false);
                 anim.SetBool("Backward", false);
+
+                //Selection
+                for (int i = 0; i < listDataset.Count; i++)
+                {
+                    for (int j = 0; j < listDataset[i].dataCondition.Count; j++)
+                    {
+
+                    }
+                }
             }
+        }
+    }
+
+    public void ConvertParameterToString()
+    {
+        //HP comparision
+        if (Player.playerHealthPoint >= aiHealthPoint)
+        {
+            hpComparisioValue = "Lebih";
+        }
+        if (Player.playerHealthPoint < aiHealthPoint)
+        {
+            hpComparisioValue = "Kurang";
+        }
+
+        //HPNPC
+        if (aiHealthPoint > 267 && aiHealthPoint <= 400)
+        {
+            hpNpcValue = "Besar";
+        }
+        if (aiHealthPoint > 134 && aiHealthPoint <= 267)
+        {
+            hpNpcValue = "Sedang";
+        }
+        if (aiHealthPoint > 1 && aiHealthPoint <= 134)
+        {
+            hpNpcValue = "Kecil";
+        }
+
+        //SPNPC
+        if (aiSkillsPoint > 50)
+        {
+            spNpcValue = "Besar";
+        }
+        else
+        {
+            spNpcValue = "Kecil";
+        }
+
+        //PlayerAttack
+        playerAttackValue = Player.playerAttack;
+
+        //PositionY
+        if (playerDistanceY > attackDistanceY)
+        {
+            positionYValue = "Tinggi";
+        }
+        if (playerDistanceY <= attackDistanceY)
+        {
+            positionYValue = "Sedang";
         }
     }
 }

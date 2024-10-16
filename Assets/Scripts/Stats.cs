@@ -37,8 +37,8 @@ public class Stats : MonoBehaviour
     {
         Player.playerHealthPoint = playerHealtBar.maxValue;
         Player.playerSkillPoint = playerSkillBar.maxValue;
-        AI.aiHealthPoint = aiHealthBar.maxValue;
-        AI.aiSkillsPoint = aiSkillBar.maxValue;
+        AIMcts.aiHealthPoint = aiHealthBar.maxValue;
+        AIMcts.aiSkillsPoint = aiSkillBar.maxValue;
         timer = 60;
     }
 
@@ -47,8 +47,8 @@ public class Stats : MonoBehaviour
     {
         playerHealtBar.value = Player.playerHealthPoint;
         playerSkillBar.value = Player.playerSkillPoint;
-        aiHealthBar.value = AI.aiHealthPoint;
-        aiSkillBar.value = AI.aiSkillsPoint;
+        aiHealthBar.value = AIMcts.aiHealthPoint;
+        aiSkillBar.value = AIMcts.aiSkillsPoint;
 
         playerHPText.text = playerHealtBar.value.ToString();
         playerSPText.text = playerSkillBar.value.ToString();

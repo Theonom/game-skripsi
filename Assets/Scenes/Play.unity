@@ -4351,6 +4351,7 @@ MonoBehaviour:
   lightAttackForce: 1
   heavyAttackForce: 3
   attackDistanceX: 3
+  attackDistanceY: 0.5
   marginMovement: 200
   ground:
     serializedVersion: 2
@@ -4364,6 +4365,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 293bc5f4e011e3b4ab8dcddcde7cbe2c, type: 2}
   - {fileID: 11400000, guid: cbe2d1bb99473df4fbb96bbaa1bbb372, type: 2}
   - {fileID: 11400000, guid: efa314e7cac131f4b8b8799636037ab4, type: 2}
+  hpComparisioValue: 
+  hpNpcValue: 
+  spNpcValue: 
+  playerAttackValue: 0
+  positionYValue: 
   state: 0
 --- !u!50 &918362720
 Rigidbody2D:
@@ -7326,7 +7332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1588127013
 MonoBehaviour:
   m_ObjectHideFlags: 0
