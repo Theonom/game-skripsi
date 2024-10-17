@@ -36,7 +36,7 @@ public class PlayerHurtBox : MonoBehaviour
         {
             anim.SetTrigger("HitReact");
             Player.playerSkillPoint += 5;
-            AI.aiSkillsPoint += 10;
+            AIMcts.aiSkillsPoint += 10;
 
             if (Player.canWalkLeft == true && Player.canWalkRight == true)
             {
@@ -55,7 +55,7 @@ public class PlayerHurtBox : MonoBehaviour
             anim.SetTrigger("BigHitReact");
             Player.playerBlockAttack = true;
             Player.playerSkillPoint += 5;
-            AI.aiSkillsPoint += 10;
+            AIMcts.aiSkillsPoint += 10;
 
             if (Player.canWalkLeft == true && Player.canWalkRight == true)
             {

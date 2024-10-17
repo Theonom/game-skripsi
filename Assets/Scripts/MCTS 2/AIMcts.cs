@@ -52,6 +52,7 @@ public class AIMcts : MonoBehaviour
     public string spNpcValue;
     public bool playerAttackValue;
     public string positionYValue;
+    public string actionValue;
 
     [Header("Etc")]
     public int state = 0;
@@ -114,6 +115,7 @@ public class AIMcts : MonoBehaviour
 
         ConvertParameterToString();
         MCTS();
+        DefinitionActionValue();
 
         //State if player down
         if (Player.playerDown == true)
@@ -516,6 +518,34 @@ public class AIMcts : MonoBehaviour
         if (playerDistanceY <= attackDistanceY)
         {
             positionYValue = "Sedang";
+        }
+    }
+
+    public void DefinitionActionValue()
+    {
+        if (actionValue == "StandAttack")
+        {
+            state = 2;
+        }
+        if (actionValue == "JumpAttack")
+        {
+            state = 3;
+        }
+        if (actionValue == "CrouchAttack")
+        {
+            state = 4;
+        }
+        if (actionValue == "StandBlock")
+        {
+            state = 5;
+        }
+        if (actionValue == "CrouchBlock")
+        {
+            state = 6;
+        }
+        if (actionValue == "BackStep")
+        {
+            state = 7;
         }
     }
 }
