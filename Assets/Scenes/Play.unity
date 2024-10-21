@@ -1107,8 +1107,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a21b6c3efeb2d459b1cb54a061a386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds: []
-  sfxSounds: []
+  musicSounds:
+  - name: BGM
+    clip: {fileID: 8300000, guid: faa623db051e8ea47b07bdec6f1fe11b, type: 3}
+  - name: BGM1
+    clip: {fileID: 8300000, guid: 89c6bfb30c1f3a54f98f8124ee6dfbe6, type: 3}
+  sfxSounds:
+  - name: forwardWalk
+    clip: {fileID: 8300000, guid: de63c19ee75fb7c429c5545fb0dae923, type: 3}
+  - name: backStep
+    clip: {fileID: 8300000, guid: 32bd79c7da776214d845728fdf80a29c, type: 3}
+  - name: airA
+    clip: {fileID: 8300000, guid: 71335d63d7943434ca0899a274f7e200, type: 3}
+  - name: airB
+    clip: {fileID: 8300000, guid: 2eb52ba4e3442ad40ba5596903139a98, type: 3}
+  - name: airFA
+    clip: {fileID: 8300000, guid: 841b849141f6f9d4fab1b77cc6b7db56, type: 3}
+  - name: airFB
+    clip: {fileID: 8300000, guid: b192ade266111c0499e063af2978c29b, type: 3}
+  - name: crouchA
+    clip: {fileID: 8300000, guid: e01707c144ef17044a4c1903f3164893, type: 3}
+  - name: crouchB
+    clip: {fileID: 8300000, guid: 674491de0a278894f950c32a842e6d25, type: 3}
+  - name: crouchFA
+    clip: {fileID: 8300000, guid: bdbb18da6eac05642be5c61ebc2e6af3, type: 3}
+  - name: crouchFB
+    clip: {fileID: 8300000, guid: ece72bc7f5277634e91a9ca8d04982c9, type: 3}
+  - name: standA
+    clip: {fileID: 8300000, guid: 2091b97a6a5680b4b9fa2d89d7cda0f7, type: 3}
+  - name: standB
+    clip: {fileID: 8300000, guid: 6bf6816953c679c4680a1fb2301b2106, type: 3}
+  - name: standFA
+    clip: {fileID: 8300000, guid: 146c2cffbff44e34488c0d97951ec3b0, type: 3}
+  - name: standFB
+    clip: {fileID: 8300000, guid: 6a09ac3723187674095622b53b826cd6, type: 3}
+  - name: jump
+    clip: {fileID: 8300000, guid: 8a9d2849e6b0b9e46a3824271967eee2, type: 3}
+  - name: hitA
+    clip: {fileID: 8300000, guid: 745c8e90599b8674491ffd5ea070d0f4, type: 3}
+  - name: hitB
+    clip: {fileID: 8300000, guid: c46b542a283af4f4c88ac55544e78e12, type: 3}
   musicSource: {fileID: 469944407}
   sfxSource: {fileID: 1399502451}
 --- !u!1 &195428146
@@ -4330,7 +4368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &918362718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4370,6 +4408,7 @@ MonoBehaviour:
   spNpcValue: 
   playerAttackValue: 0
   positionYValue: 
+  actionValue: 
   state: 0
 --- !u!50 &918362720
 Rigidbody2D:
@@ -6142,7 +6181,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359958737}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea7cb7c450b1b08419dc0cb60bb6c410, type: 3}
   m_Name: 

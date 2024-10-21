@@ -460,13 +460,9 @@ public class AIMcts : MonoBehaviour
                 anim.SetBool("Backward", false);
 
                 //Selection
-                for (int i = 0; i < listDataset.Count; i++)
-                {
-                    for (int j = 0; j < listDataset[i].dataCondition.Count; j++)
-                    {
-
-                    }
-                }
+                //Expansion
+                //Simulation
+                //Bakcpropagation
             }
         }
     }
