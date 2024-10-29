@@ -24,7 +24,7 @@ public class PlayerTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("AIHurtBox"))
         {
             Player.playerAttack = false;
-            AIMcts.aiHealthPoint -= damageAmt;
+            AI.aiHealthPoint -= damageAmt;
         }
     }
 }

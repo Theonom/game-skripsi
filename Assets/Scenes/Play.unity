@@ -1458,7 +1458,7 @@ MonoBehaviour:
   player: {fileID: 1549605002}
   rig: {fileID: 1549605003}
   playerTransform: {fileID: 1549605001}
-  aiTransform: {fileID: 918362722}
+  aiTransform: {fileID: 1856770731}
 --- !u!1 &271536836
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1549604998}
-  ai: {fileID: 918362717}
+  ai: {fileID: 1856770727}
 --- !u!1 &867202233
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,7 +4369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &918362718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7333,7 +7333,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   restrict: {fileID: 847618180}
-  opponent: {fileID: 918362717}
+  opponent: {fileID: 1856770727}
 --- !u!50 &1549605003
 Rigidbody2D:
   serializedVersion: 4
@@ -8796,7 +8796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1549604998}
-  npc: {fileID: 918362717}
+  npc: {fileID: 1856770727}
   playerHealtBar: {fileID: 1394315651}
   playerSkillBar: {fileID: 945380423}
   aiHealthBar: {fileID: 1614165445}
@@ -8830,7 +8830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1856770728
 MonoBehaviour:
   m_ObjectHideFlags: 0
