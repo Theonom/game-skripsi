@@ -27,8 +27,8 @@ public class AI : MonoBehaviour
     public float attackDistanceY;
     public float rangeAttackY;
     public int marginMovement;
-    private float playerDistanceX;
-    private float playerDistanceY;
+    [HideInInspector] public float playerDistanceX;
+    [HideInInspector] public float playerDistanceY;
     public static bool canWalkLeft = true;
     public static bool canWalkRight = true;
     public static bool facingLeftAI = true;

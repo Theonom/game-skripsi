@@ -8824,6 +8824,7 @@ GameObject:
   - component: {fileID: 1856770730}
   - component: {fileID: 1856770729}
   - component: {fileID: 1856770728}
+  - component: {fileID: 1856770732}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -8854,6 +8855,8 @@ MonoBehaviour:
   attackDistanceY: 0.5
   rangeAttackY: 1.6
   marginMovement: 200
+  playerDistanceX: 0
+  playerDistanceY: 0
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -8917,6 +8920,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1856770732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856770727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43302b2e51b751e4584a89f54c0af6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 1856770728}
+  hpComparision: 
+  hpNPC: 
+  spNPC: 
+  playerAttack: 
+  positionY: 
+  action: 
+  dataRound:
+  - {fileID: 11400000, guid: 9c93407db0625794b8bb96c308cb6958, type: 2}
 --- !u!1 &1863733823
 GameObject:
   m_ObjectHideFlags: 0
