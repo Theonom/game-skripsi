@@ -1458,7 +1458,7 @@ MonoBehaviour:
   player: {fileID: 1549605002}
   rig: {fileID: 1549605003}
   playerTransform: {fileID: 1549605001}
-  aiTransform: {fileID: 1856770731}
+  aiTransform: {fileID: 918362722}
 --- !u!1 &271536836
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1549604998}
-  ai: {fileID: 1856770727}
+  ai: {fileID: 918362717}
 --- !u!1 &867202233
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,13 +4362,14 @@ GameObject:
   - component: {fileID: 918362721}
   - component: {fileID: 918362720}
   - component: {fileID: 918362718}
+  - component: {fileID: 918362723}
   m_Layer: 0
   m_Name: AI mcts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &918362718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4391,24 +4392,13 @@ MonoBehaviour:
   attackDistanceX: 3
   attackDistanceY: 0.5
   marginMovement: 200
+  playerDistanceX: 0
+  playerDistanceY: 0
   ground:
     serializedVersion: 2
     m_Bits: 64
   restrict: {fileID: 550454011}
   player: {fileID: 1549604998}
-  listDataset:
-  - {fileID: 11400000, guid: f75078a92f8efbf47b5e0abb83c1e99a, type: 2}
-  - {fileID: 11400000, guid: c2b694e66dc4cdf4899697780524e1c0, type: 2}
-  - {fileID: 11400000, guid: 7e795c228cc4adc47a0d7f9303b6cc43, type: 2}
-  - {fileID: 11400000, guid: 293bc5f4e011e3b4ab8dcddcde7cbe2c, type: 2}
-  - {fileID: 11400000, guid: cbe2d1bb99473df4fbb96bbaa1bbb372, type: 2}
-  - {fileID: 11400000, guid: efa314e7cac131f4b8b8799636037ab4, type: 2}
-  hpComparisioValue: 
-  hpNpcValue: 
-  spNpcValue: 
-  playerAttackValue: 0
-  positionYValue: 
-  actionValue: 
   state: 0
 --- !u!50 &918362720
 Rigidbody2D:
@@ -4466,6 +4456,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918362723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918362717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f740673a3f840f545b0d0a2f72d67429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiMCTS: {fileID: 918362718}
+  hpComparision: 
+  hpNPC: 
+  spNPC: 
+  playerAttack: 0
+  positionY: 
+  action: 
+  listDataset:
+  - {fileID: 11400000, guid: f75078a92f8efbf47b5e0abb83c1e99a, type: 2}
+  - {fileID: 11400000, guid: c2b694e66dc4cdf4899697780524e1c0, type: 2}
+  - {fileID: 11400000, guid: 7e795c228cc4adc47a0d7f9303b6cc43, type: 2}
+  - {fileID: 11400000, guid: 293bc5f4e011e3b4ab8dcddcde7cbe2c, type: 2}
+  - {fileID: 11400000, guid: cbe2d1bb99473df4fbb96bbaa1bbb372, type: 2}
+  - {fileID: 11400000, guid: efa314e7cac131f4b8b8799636037ab4, type: 2}
 --- !u!1 &935234922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7317,7 +7333,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   restrict: {fileID: 847618180}
-  opponent: {fileID: 1856770727}
+  opponent: {fileID: 918362717}
 --- !u!50 &1549605003
 Rigidbody2D:
   serializedVersion: 4
