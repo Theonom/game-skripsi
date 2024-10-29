@@ -25,8 +25,8 @@ public class AIMcts : MonoBehaviour
     public float attackDistanceX;
     public float attackDistanceY;
     public int marginMovement;
-    private float playerDistanceX;
-    private float playerDistanceY;
+    [HideInInspector] public float playerDistanceX;
+    [HideInInspector] public float playerDistanceY;
     public static bool canWalkLeft = true;
     public static bool canWalkRight = true;
     public static bool facingLeftAI = true;
@@ -43,21 +43,9 @@ public class AIMcts : MonoBehaviour
     private Rigidbody2D rig;
     private Collider2D coll;
 
-    [Header("Dataset")]
-    public List<Dataset> listDataset;
-
-    [Header("String Parameters")]
-    public string hpComparisioValue;
-    public string hpNpcValue;
-    public string spNpcValue;
-    public bool playerAttackValue;
-    public string positionYValue;
-    public string actionValue;
-
     [Header("Etc")]
     public int state = 0;
     private int attackNumber;
-    private float timerWalkToPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +54,6 @@ public class AIMcts : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         state = 0;
-        timerWalkToPlayer = 0;
     }
 
     // Update is called once per frame
@@ -112,10 +99,6 @@ public class AIMcts : MonoBehaviour
         Blocking();
         Rise();
         FaceRightOrLeft();
-
-        ConvertParameterToString();
-        MCTS();
-        DefinitionActionValue();
 
         //State if player down
         if (Player.playerDown == true)
@@ -435,113 +418,5 @@ public class AIMcts : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Down", false);
         aiBlockAttack = false;
-    }
-
-    public void MCTS()
-    {
-        if (GameController.playGame)
-        {
-            if (playerDistanceX > attackDistanceX && state == 0 && !Player.playerDown)
-            {
-                if (timerWalkToPlayer < 2)
-                {
-                    timerWalkToPlayer += Time.deltaTime;
-                }
-                if (timerWalkToPlayer >= 2)
-                {
-                    state = 1;
-                    timerWalkToPlayer = 0;
-                }
-            }
-            if (playerDistanceX <= attackDistanceX)
-            {
-                state = 0;
-                anim.SetBool("Forward", false);
-                anim.SetBool("Backward", false);
-
-                //Selection
-                //Expansion
-                //Simulation
-                //Bakcpropagation
-            }
-        }
-    }
-
-    public void ConvertParameterToString()
-    {
-        //HP comparision
-        if (Player.playerHealthPoint >= aiHealthPoint)
-        {
-            hpComparisioValue = "Lebih";
-        }
-        if (Player.playerHealthPoint < aiHealthPoint)
-        {
-            hpComparisioValue = "Kurang";
-        }
-
-        //HPNPC
-        if (aiHealthPoint > 267 && aiHealthPoint <= 400)
-        {
-            hpNpcValue = "Besar";
-        }
-        if (aiHealthPoint > 134 && aiHealthPoint <= 267)
-        {
-            hpNpcValue = "Sedang";
-        }
-        if (aiHealthPoint > 1 && aiHealthPoint <= 134)
-        {
-            hpNpcValue = "Kecil";
-        }
-
-        //SPNPC
-        if (aiSkillsPoint > 50)
-        {
-            spNpcValue = "Besar";
-        }
-        else
-        {
-            spNpcValue = "Kecil";
-        }
-
-        //PlayerAttack
-        playerAttackValue = Player.playerAttack;
-
-        //PositionY
-        if (playerDistanceY > attackDistanceY)
-        {
-            positionYValue = "Tinggi";
-        }
-        if (playerDistanceY <= attackDistanceY)
-        {
-            positionYValue = "Sedang";
-        }
-    }
-
-    public void DefinitionActionValue()
-    {
-        if (actionValue == "StandAttack")
-        {
-            state = 2;
-        }
-        if (actionValue == "JumpAttack")
-        {
-            state = 3;
-        }
-        if (actionValue == "CrouchAttack")
-        {
-            state = 4;
-        }
-        if (actionValue == "StandBlock")
-        {
-            state = 5;
-        }
-        if (actionValue == "CrouchBlock")
-        {
-            state = 6;
-        }
-        if (actionValue == "BackStep")
-        {
-            state = 7;
-        }
     }
 }
