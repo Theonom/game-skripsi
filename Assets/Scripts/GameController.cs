@@ -20,12 +20,14 @@ public class GameController : MonoBehaviour
     {
         playGame = false;
         isPause = false;
+        AudioManager.instance.PlayMusic("BGM");
+        AudioManager.instance.SetMusicVolume(1.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameOver();
+        //GameOver();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

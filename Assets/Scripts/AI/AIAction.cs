@@ -32,4 +32,9 @@ public class AIAction : MonoBehaviour
     {
         AI.aiSkillsPoint -= ai.blockSkillsPoint;
     }
+
+    public void PlaySfx(string nameSfx)
+    {
+        AudioManager.instance.PlaySfx(nameSfx);
+    }
 }

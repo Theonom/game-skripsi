@@ -184,6 +184,7 @@ public class Player : MonoBehaviour
                     if (isJumping == false)
                     {
                         isJumping = true;
+                        AudioManager.instance.PlaySfx("jump");
                         anim.SetTrigger("Jump");
                         rig.velocity = new Vector2(rig.velocity.x, jumpForce);
                         StartCoroutine(JumpPause());
@@ -244,12 +245,14 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Light Punch"))
                     {
+                        AudioManager.instance.PlaySfx("standA");
                         anim.SetTrigger("LightPunch");
                         playerAttack = true;
                         playerSkillPoint -= lightSkillsPoint;
                     }
                     if (Input.GetButtonDown("Light Kick"))
                     {
+                        AudioManager.instance.PlaySfx("standB");
                         anim.SetTrigger("LightKick");
                         playerAttack = true;
                         playerSkillPoint -= lightSkillsPoint;
@@ -259,12 +262,14 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Heavy Punch"))
                     {
+                        AudioManager.instance.PlaySfx("standFA");
                         anim.SetTrigger("HeavyPunch");
                         playerAttack = true;
                         playerSkillPoint -= heavySkilsPoint;
                     }
                     if (Input.GetButtonDown("Heavy Kick"))
                     {
+                        AudioManager.instance.PlaySfx("standFB");
                         anim.SetTrigger("HeavyKick");
                         playerAttack = true;
                         playerSkillPoint -= heavySkilsPoint;
@@ -279,12 +284,14 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Light Punch"))
                     {
+                        AudioManager.instance.PlaySfx("crouchA");
                         anim.SetTrigger("LightPunch");
                         playerAttack = true;
                         playerSkillPoint -= lightSkillsPoint;
                     }
                     if (Input.GetButtonDown("Light Kick"))
                     {
+                        AudioManager.instance.PlaySfx("crouchB");
                         anim.SetTrigger("LightKick");
                         playerAttack = true;
                         playerSkillPoint -= lightSkillsPoint;
@@ -294,12 +301,14 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Heavy Punch"))
                     {
+                        AudioManager.instance.PlaySfx("crouchFA");
                         anim.SetTrigger("HeavyPunch");
                         playerAttack = true;
                         playerSkillPoint -= heavySkilsPoint;
                     }
                     if (Input.GetButtonDown("Heavy Kick"))
                     {
+                        AudioManager.instance.PlaySfx("crouchFB");
                         anim.SetTrigger("HeavyKick");
                         playerAttack = true;
                         playerSkillPoint -= heavySkilsPoint;
@@ -314,12 +323,14 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Light Punch"))
                     {
+                        AudioManager.instance.PlaySfx("airA");
                         anim.SetTrigger("LightPunch");
                         playerAttack = true;
                         playerSkillPoint -= lightSkillsPoint;
                     }
                     if (Input.GetButtonDown("Light Kick"))
                     {
+                        AudioManager.instance.PlaySfx("airB");
                         anim.SetTrigger("LightKick");
                         playerAttack = true;
                         playerSkillPoint -= lightSkillsPoint;
@@ -329,12 +340,14 @@ public class Player : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Heavy Punch"))
                     {
+                        AudioManager.instance.PlaySfx("airFA");
                         anim.SetTrigger("HeavyPunch");
                         playerAttack = true;
                         playerSkillPoint -= heavySkilsPoint;
                     }
                     if (Input.GetButtonDown("Heavy Kick"))
                     {
+                        AudioManager.instance.PlaySfx("airFB");
                         anim.SetTrigger("HeavyKick");
                         playerAttack = true;
                         playerSkillPoint -= heavySkilsPoint;
@@ -379,6 +392,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetButtonDown("Rise"))
             {
+                AudioManager.instance.PlaySfx("rise");
                 anim.SetBool("Down", false);
                 playerBlockAttack = false;
                 playerDown = false;

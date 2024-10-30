@@ -23,4 +23,9 @@ public class PlayerAction : MonoBehaviour
     {
         Player.playerAttack = false;
     }
+
+    public void PlaySfxLanding()
+    {
+        AudioManager.instance.PlaySfx("landing");
+    }
 }

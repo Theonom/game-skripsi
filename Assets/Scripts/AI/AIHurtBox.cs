@@ -34,6 +34,7 @@ public class AIHurtBox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("LightAttacks"))
         {
+            AudioManager.instance.PlaySfx("hitA");
             anim.SetTrigger("HitReact");
             AI.aiSkillsPoint += 5;
             Player.playerSkillPoint += 10;
@@ -52,6 +53,7 @@ public class AIHurtBox : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("HeavyAttacks"))
         {
+            AudioManager.instance.PlaySfx("hitB");
             anim.SetTrigger("BigHitReact");
             AI.aiBlockAttack = true;
             AI.aiSkillsPoint += 5;
