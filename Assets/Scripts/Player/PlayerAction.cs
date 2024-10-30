@@ -24,8 +24,8 @@ public class PlayerAction : MonoBehaviour
         Player.playerAttack = false;
     }
 
-    public void PlaySfxLanding()
+    public void PlaySfx(string nameSfx)
     {
-        AudioManager.instance.PlaySfx("landing");
+        AudioManager.instance.PlaySfx(nameSfx);
     }
 }
