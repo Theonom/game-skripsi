@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private int round;
+    public int round;
     [SerializeField] private int playerWinAmount;
     [SerializeField] private int aiWinAmount;
 
