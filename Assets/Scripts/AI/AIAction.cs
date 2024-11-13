@@ -42,6 +42,14 @@ public class AIAction : MonoBehaviour
 
     public void AddDataToDataTesting(string action)
     {
+        dataAI.iteration += 1;
+        GameState initialState = new GameState(dataAI.hpComparision, dataAI.hpNPC, dataAI.spNPC, dataAI.playerAttack, dataAI.positionY);
+        dataAI.nodeAI = new Node(initialState);
+
+        MCTS.RunMCTS(dataAI.nodeAI, dataAI.iteration, initialState);
+        Action actionSelected = MCTS.Simulation(dataAI.nodeAI);
+        action += actionSelected.name;
+
         Data newData = new Data
         {
             actionData = action,

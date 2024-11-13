@@ -6304,13 +6304,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1359958739}
   - component: {fileID: 1359958738}
+  - component: {fileID: 1359958740}
   m_Layer: 0
   m_Name: TestDataset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1359958738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6318,24 +6319,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359958737}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea7cb7c450b1b08419dc0cb60bb6c410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listDataset:
-  - {fileID: 11400000, guid: f75078a92f8efbf47b5e0abb83c1e99a, type: 2}
-  - {fileID: 11400000, guid: c2b694e66dc4cdf4899697780524e1c0, type: 2}
-  - {fileID: 11400000, guid: 7e795c228cc4adc47a0d7f9303b6cc43, type: 2}
-  - {fileID: 11400000, guid: 293bc5f4e011e3b4ab8dcddcde7cbe2c, type: 2}
-  - {fileID: 11400000, guid: cbe2d1bb99473df4fbb96bbaa1bbb372, type: 2}
-  - {fileID: 11400000, guid: efa314e7cac131f4b8b8799636037ab4, type: 2}
-  hpComparision: Sedang
-  hpNPC: 
-  spNPC: 
-  playerAttack: 0
-  positionY: 
-  action: 
+  listDataAction: []
+  listAction: []
 --- !u!4 &1359958739
 Transform:
   m_ObjectHideFlags: 0
@@ -6351,6 +6341,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1359958740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359958737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c97227e775d8a4b97f3e7c611c9c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 100
+  opponentHealth: 100
+  iteration: 0
+  node:
+    state:
+      playerHealth: 0
+      opponentHealth: 0
+      isPlayerTurn: 0
+    children: []
+    visits: 0
+    wins: 0
+    action:
+      name: 
 --- !u!1 &1387809447
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,6 +9081,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c93407db0625794b8bb96c308cb6958, type: 2}
   - {fileID: 11400000, guid: 7225ddbed3d2f2940ab26d1e7ddd16d7, type: 2}
   - {fileID: 11400000, guid: 328c275c0e82e7544953a1e6769af39a, type: 2}
+  nodeAI:
+    state:
+      hpComparision: 
+      hpNPC: 
+      spNPC: 
+      playerAttack: 
+      positionY: 
+    children: []
+    visits: 0
+    wins: 0
+    action:
+      name: 
+  iteration: 0
 --- !u!1 &1863733823
 GameObject:
   m_ObjectHideFlags: 0

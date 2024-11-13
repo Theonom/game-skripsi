@@ -19,6 +19,9 @@ public class DataAI : MonoBehaviour
     [Header("Data Testing")]
     public List<DataTesting> dataRound;
 
+    [HideInInspector] public Node nodeAI;
+    public int iteration;
+
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +34,23 @@ public class DataAI : MonoBehaviour
 
         //Convert action to string
         ActionInString();
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            iteration += 1;
+            GameState initialState = new GameState(hpComparision, hpNPC, spNPC, playerAttack, positionY);
+            nodeAI = new Node(initialState);
+
+            Node bestMoveNode = MCTS.RunMCTS(nodeAI, iteration, initialState);
+            Action actionSelected = MCTS.Simulation(nodeAI);
+            Debug.Log("Action: " + actionSelected.name);
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Action actionSelected = MCTS.Simulation(nodeAI);
+            Debug.Log("Action: " + actionSelected.name);
+       }
     }
 
     public void HpComparisionInString()

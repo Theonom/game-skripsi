@@ -12,4 +12,196 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617f38bcfc746304e857e3fe47a74cec, type: 3}
   m_Name: Round1
   m_EditorClassIdentifier: 
-  dataTesting: []
+  dataTesting:
+  - actionData: Stand Block1.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack2.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Block3.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack4.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack5.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Block6.
+    hpComparisionData: Kurang
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack1.1.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack2.1.
+    hpComparisionData: Kurang
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack3.1.
+    hpComparisionData: Kurang
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack4.1.
+    hpComparisionData: Kurang
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack5.1.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack6.1.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack1.2.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack2.2.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack3.2.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Block4.2.
+    hpComparisionData: Kurang
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack5.2.
+    hpComparisionData: Lebih
+    hpNPCData: Besar
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack6.2.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack1.3.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack2.3.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack3.3.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack4.3.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack5.3.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack6.3.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack1.4.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack2.4.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Block3.4.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack4.4.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack5.4.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang
+  - actionData: Stand Attack6.4.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Attack1.5.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: True
+    positionYData: Sedang
+  - actionData: Stand Block2.5.
+    hpComparisionData: Lebih
+    hpNPCData: Sedang
+    spNPCData: Besar
+    playerAttackData: False
+    positionYData: Sedang

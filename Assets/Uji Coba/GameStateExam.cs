@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState
+[System.Serializable]
+public class GameStateExam
 {
     public int playerHealth;
     public int opponentHealth;
     public bool isPlayerTurn;
 
-    public GameState(int playerHP, int OpponentHP, bool playerTurn)
+    private static List<Action> availableActions;
+
+    public GameStateExam(int playerHP, int OpponentHP, bool playerTurn)
     {
         playerHealth = playerHP;
         opponentHealth = OpponentHP;
@@ -17,12 +20,21 @@ public class GameState
 
     public List<Action> GetAvailableActions()
     {
-        return new List<Action> { new Action("Attack"), new Action("Defend"), new Action("Dodge") };
+        if (availableActions == null)
+        {
+            availableActions = new List<Action>
+            {
+                new Action("Attack"),
+                new Action("Defend"),
+                new Action("Dodge")
+            };
+        }
+        return availableActions;
     }
 
-    public GameState ApplyAction(Action action)
+    public GameStateExam ApplyAction(Action action)
     {
-        GameState newState = new GameState(playerHealth, opponentHealth, !isPlayerTurn);
+        GameStateExam newState = new GameStateExam(playerHealth, opponentHealth, !isPlayerTurn);
 
         if (action.name == "Attack")
         {
