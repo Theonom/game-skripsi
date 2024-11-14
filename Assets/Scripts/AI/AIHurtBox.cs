@@ -36,8 +36,8 @@ public class AIHurtBox : MonoBehaviour
         {
             AudioManager.instance.PlaySfx("hitA");
             anim.SetTrigger("HitReact");
-            AI.aiSkillsPoint += 5;
-            Player.playerSkillPoint += 10;
+            AI.aiSkillsPoint += 2;
+            Player.playerSkillPoint += 3;
 
             if (AI.canWalkLeft == true && AI.canWalkRight == true)
             {

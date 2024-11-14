@@ -15,6 +15,7 @@ public class AI : MonoBehaviour
     public static float aiSkillsPoint;
     public static bool aiAttack = false;
     public static bool aiBlockAttack = false;
+    public static bool isBackStep;
 
     [Header("Stats Movement")]
     public float walkSpeed;
@@ -49,7 +50,7 @@ public class AI : MonoBehaviour
     public float randomAttackNumberRate;
     public int state = 0;
     private float timerRandomAttackNumber;
-    private float timerWalkToPlayer;
+    public float timerWalkToPlayer;
     private int attackNumber;
 
     // Start is called before the first frame update
@@ -60,6 +61,7 @@ public class AI : MonoBehaviour
         coll = GetComponent<Collider2D>();
         state = 0;
         timerWalkToPlayer = 0;
+        isBackStep = false;
     }
 
     // Update is called once per frame
@@ -143,13 +145,13 @@ public class AI : MonoBehaviour
 
         if (canWalkRight == false || canWalkLeft == false)
         {
-            timerWalkToPlayer = 0;
             anim.SetBool("Forward", false);
             anim.SetBool("Backward", false);
 
             if (state == 7)
             {
                 walkToPlayer = true;
+                isBackStep = false;
             }
         }
 
@@ -169,6 +171,10 @@ public class AI : MonoBehaviour
         if (Player.playerDown == true)
         {
             state = 0;
+            if (!walkToPlayer)
+            {
+                anim.SetBool("Forward", false);
+            }
         }
 
         //Crouch off
@@ -1182,7 +1188,8 @@ public class AI : MonoBehaviour
         {
             timerWalkToPlayer += Time.deltaTime;
 
-            if (timerWalkToPlayer >= 2)
+            float time = playerDistanceX / 5;
+            if (timerWalkToPlayer >= time)
             {
                 timerWalkToPlayer = 0;
                 state = 1;

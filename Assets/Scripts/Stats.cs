@@ -31,6 +31,7 @@ public class Stats : MonoBehaviour
     public Text timeText;
 
     public static float timer;
+    private float timerAddSkillPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,32 @@ public class Stats : MonoBehaviour
             if (timer <= 0)
             {
                 timer = 0;
+            }
+        }
+
+        AddSkillPoint();
+    }
+
+    public void AddSkillPoint()
+    {
+        if (Player.playerSkillPoint < 10)
+        {
+            timerAddSkillPoint += Time.deltaTime;
+
+            if (timerAddSkillPoint >= 1)
+            {
+                Player.playerSkillPoint += 2;
+                timerAddSkillPoint = 0;
+            }
+        }
+        if (AI.aiSkillsPoint < 10)
+        {
+            timerAddSkillPoint += Time.deltaTime;
+
+            if (timerAddSkillPoint >= 1)
+            {
+                AI.aiSkillsPoint += 2;
+                timerAddSkillPoint = 0;
             }
         }
     }
