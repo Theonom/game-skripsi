@@ -83,7 +83,7 @@ public class DataAI : MonoBehaviour
 
     public void SpNpcInString()
     {
-        if (AI.aiHealthPoint > 50)
+        if (AI.aiSkillsPoint > 50)
         {
             spNPC = "Besar";
         }
@@ -100,11 +100,11 @@ public class DataAI : MonoBehaviour
 
     public void PositionYInString()
     {
-        if (ai.playerDistanceX > ai.attackDistanceX)
+        if (ai.playerDistanceY > ai.attackDistanceY)
         {
             positionY = "Tinggi";
         }
-        if (ai.playerDistanceX > ai.attackDistanceX)
+        if (ai.playerDistanceY <= ai.attackDistanceY)
         {
             positionY = "Sedang";
         }

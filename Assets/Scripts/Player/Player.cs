@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
         coll = GetComponent<Collider2D>();
         timeBlocking = 0;
         StatsReset();
+
+        isJumping = false;
+        playerAttack = false;
+        playerBlockAttack = false;
+        playerDown = false;
     }
 
     public void StatsReset()

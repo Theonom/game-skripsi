@@ -61,6 +61,12 @@ public class AI : MonoBehaviour
         coll = GetComponent<Collider2D>();
         state = 0;
         timerWalkToPlayer = 0;
+
+        isJumping = false;
+        jumpAttack = false;
+        walkToPlayer = false;
+        aiAttack = false;
+        aiBlockAttack = false;
         isBackStep = false;
     }
 

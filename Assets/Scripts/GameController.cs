@@ -16,18 +16,35 @@ public class GameController : MonoBehaviour
     public Player playerScript;
     public AI aiScrpt;
 
+    [Header("Spawn Point")]
+    public Transform spawn1;
+    public Transform spawn2;
+
+    [Header("Character")]
+    public GameObject player;
+    public GameObject npc;
+
+    [Header("WinnerInRound")]
+    public GameObject panelNextRound;
+
+    public Text winnerName;
+    public Text round;
+
     private void Start()
     {
         playGame = false;
         isPause = false;
         AudioManager.instance.PlayMusic("BGM");
         AudioManager.instance.SetMusicVolume(1.0f);
+        PositionCharacter();
+        panelNextRound.SetActive(false);
+        Pause(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //GameOver();
+        GameOver();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -52,17 +69,43 @@ public class GameController : MonoBehaviour
         {
             if (GameManager.Instance.GetPlayerWinAmount() < 2 && GameManager.Instance.GetAiWinAmount() < 2)
             {
-                WinnerInRound();
-                GameManager.Instance.AddRound(1);
-                SceneManager.LoadScene("Play");
-            }
-        }
+                panelNextRound.SetActive(true);
+                round.text = "Round" + GameManager.Instance.GetRound();
 
-        if (GameManager.Instance.GetPlayerWinAmount() == 2 || GameManager.Instance.GetAiWinAmount() == 2 || GameManager.Instance.GetRound() > 3)
-        {
-            WinnerInGame();
-            gameOverPopUp.SetActive(true);
-            Pause(0);
+                if (Player.playerHealthPoint > AI.aiHealthPoint)
+                {
+                    winnerName.text = "Player Win";
+                }
+                if (Player.playerHealthPoint < AI.aiHealthPoint)
+                {
+                    winnerName.text = "Computer Win";
+                }
+                if (Player.playerHealthPoint == AI.aiHealthPoint)
+                {
+                    winnerName.text = "Draw";
+                }
+
+                Pause(0);
+            }
+
+            if (GameManager.Instance.GetPlayerWinAmount() == 1 && Player.playerHealthPoint > AI.aiHealthPoint)
+            {
+                winnerText.text = "Player Win";
+                gameOverPopUp.SetActive(true);
+                Pause(0);
+            }
+            if (GameManager.Instance.GetAiWinAmount() == 1 && Player.playerHealthPoint < AI.aiHealthPoint)
+            {
+                winnerText.text = "Computer Win";
+                gameOverPopUp.SetActive(true);
+                Pause(0);
+            }
+            if (GameManager.Instance.GetAiWinAmount() == 1 && GameManager.Instance.GetPlayerWinAmount() == 1 && Player.playerHealthPoint == AI.aiHealthPoint)
+            {
+                winnerText.text = "Draw";
+                gameOverPopUp.SetActive(true);
+                Pause(0);
+            }
         }
     }
 
@@ -82,20 +125,30 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void WinnerInGame()
+    public void PositionCharacter()
     {
-        if (GameManager.Instance.GetPlayerWinAmount() > GameManager.Instance.GetAiWinAmount())
+        if (GameManager.Instance.GetRound() == 1)
         {
-            winnerText.text = "Player Win";
+            player.transform.position = new Vector2(spawn1.position.x, spawn1.position.y);
+            npc.transform.position = new Vector2(spawn2.position.x, spawn2.position.y);
         }
-        if (GameManager.Instance.GetPlayerWinAmount() < GameManager.Instance.GetAiWinAmount())
+        if (GameManager.Instance.GetRound() == 2)
         {
-            winnerText.text = "Computer Win";
+            player.transform.position = new Vector2(spawn2.position.x, spawn2.position.y);
+            npc.transform.position = new Vector2(spawn1.position.x, spawn1.position.y);
         }
-        if (GameManager.Instance.GetPlayerWinAmount() == GameManager.Instance.GetAiWinAmount())
+        if (GameManager.Instance.GetRound() == 3)
         {
-            winnerText.text = "Draw";
+            player.transform.position = new Vector2(spawn1.position.x, spawn1.position.y);
+            npc.transform.position = new Vector2(spawn2.position.x, spawn2.position.y);
         }
+    }
+
+    public void NextRound()
+    {
+        WinnerInRound();
+        GameManager.Instance.AddRound(1);
+        SceneManager.LoadScene("Play");
     }
 
     public void Pause(int value)

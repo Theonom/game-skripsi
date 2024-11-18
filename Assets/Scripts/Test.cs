@@ -15,10 +15,10 @@ public class Test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stats.playerHealtBar.maxValue = playerHP;
-        stats.aiHealthBar.maxValue = aiHP;
-        stats.playerSkillBar.maxValue = playerSP;
-        stats.aiSkillBar.maxValue = aiSP;
+        stats.leftHealtBar.maxValue = playerHP;
+        stats.rightHealthBar.maxValue = aiHP;
+        stats.leftSkillBar.maxValue = playerSP;
+        stats.rightSkillBar.maxValue = aiSP;
         Player.playerAttack = playerAttack;
     }
 

@@ -36,8 +36,8 @@ public class PlayerHurtBox : MonoBehaviour
         {
             AudioManager.instance.PlaySfx("hitA");
             anim.SetTrigger("HitReact");
-            Player.playerSkillPoint += 2;
-            AI.aiSkillsPoint += 3;
+            Player.playerSkillPoint += 4;
+            AI.aiSkillsPoint += 4;
 
             if (Player.canWalkLeft == true && Player.canWalkRight == true)
             {
@@ -56,8 +56,8 @@ public class PlayerHurtBox : MonoBehaviour
             AudioManager.instance.PlaySfx("hitB");
             anim.SetTrigger("BigHitReact");
             Player.playerBlockAttack = true;
-            Player.playerSkillPoint += 5;
-            AI.aiSkillsPoint += 10;
+            Player.playerSkillPoint += 4;
+            AI.aiSkillsPoint += 4;
 
             if (Player.canWalkLeft == true && Player.canWalkRight == true)
             {

@@ -9,10 +9,10 @@ public class Stats : MonoBehaviour
     public GameObject npc;
 
     [Header("Bar")]
-    public Slider playerHealtBar;
-    public Slider playerSkillBar;
-    public Slider aiHealthBar;
-    public Slider aiSkillBar;
+    public Slider leftHealtBar;
+    public Slider leftSkillBar;
+    public Slider rightHealthBar;
+    public Slider rightSkillBar;
 
     [Header("Testing Player Text")]
     public Text playerHPText;
@@ -28,6 +28,10 @@ public class Stats : MonoBehaviour
     public Text npcPositionY;
     public Text npcAttack;
 
+    [Header("Object Testing")]
+    public RectTransform playerTest;
+    public RectTransform npcTest;
+
     public Text timeText;
 
     public static float timer;
@@ -36,32 +40,66 @@ public class Stats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player.playerHealthPoint = playerHealtBar.maxValue;
-        Player.playerSkillPoint = playerSkillBar.maxValue;
-        AI.aiHealthPoint = aiHealthBar.maxValue;
-        AI.aiSkillsPoint = aiSkillBar.maxValue;
+        if (GameManager.Instance.GetRound() == 1 || GameManager.Instance.GetRound() == 3)
+        {
+            Player.playerHealthPoint = leftHealtBar.maxValue;
+            Player.playerSkillPoint = leftSkillBar.maxValue;
+            AI.aiHealthPoint = rightHealthBar.maxValue;
+            AI.aiSkillsPoint = rightSkillBar.maxValue;
+        }
+        if (GameManager.Instance.GetRound() == 2)
+        {
+            Player.playerHealthPoint = rightHealthBar.maxValue;
+            Player.playerSkillPoint = rightSkillBar.maxValue;
+            AI.aiHealthPoint = leftHealtBar.maxValue;
+            AI.aiSkillsPoint = leftSkillBar.maxValue;
+        }
+
         timer = 60;
+        ChangePositionObjetTest();
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHealtBar.value = Player.playerHealthPoint;
-        playerSkillBar.value = Player.playerSkillPoint;
-        aiHealthBar.value = AI.aiHealthPoint;
-        aiSkillBar.value = AI.aiSkillsPoint;
+        if (GameManager.Instance.GetRound() == 1 || GameManager.Instance.GetRound() == 3)
+        {
+            leftHealtBar.value = Player.playerHealthPoint;
+            leftSkillBar.value = Player.playerSkillPoint;
+            rightHealthBar.value = AI.aiHealthPoint;
+            rightSkillBar.value = AI.aiSkillsPoint;
 
-        playerHPText.text = playerHealtBar.value.ToString();
-        playerSPText.text = playerSkillBar.value.ToString();
-        playerPositionX.text = player.transform.position.x.ToString();
-        playerPositionY.text = player.transform.position.y.ToString();
-        playerAttack.text = Player.playerAttack.ToString();
+            playerHPText.text = leftHealtBar.value.ToString();
+            playerSPText.text = leftSkillBar.value.ToString();
+            playerPositionX.text = player.transform.position.x.ToString();
+            playerPositionY.text = player.transform.position.y.ToString();
+            playerAttack.text = Player.playerAttack.ToString();
 
-        npcHPText.text = aiHealthBar.value.ToString();
-        npcSPText.text = aiSkillBar.value.ToString();
-        npcPositionX.text = npc.transform.position.x.ToString();
-        npcPositionY.text = npc.transform.position.y.ToString();
-        npcAttack.text = AI.aiAttack.ToString();
+            npcHPText.text = rightHealthBar.value.ToString();
+            npcSPText.text = rightSkillBar.value.ToString();
+            npcPositionX.text = npc.transform.position.x.ToString();
+            npcPositionY.text = npc.transform.position.y.ToString();
+            npcAttack.text = AI.aiAttack.ToString();
+        }
+        if (GameManager.Instance.GetRound() == 2)
+        {
+            rightHealthBar.value = Player.playerHealthPoint;
+            rightSkillBar.value = Player.playerSkillPoint;
+            leftHealtBar.value = AI.aiHealthPoint;
+            leftSkillBar.value = AI.aiSkillsPoint;
+
+            playerHPText.text = rightHealthBar.value.ToString();
+            playerSPText.text = rightSkillBar.value.ToString();
+            playerPositionX.text = player.transform.position.x.ToString();
+            playerPositionY.text = player.transform.position.y.ToString();
+            playerAttack.text = Player.playerAttack.ToString();
+
+            npcHPText.text = leftHealtBar.value.ToString();
+            npcSPText.text = leftSkillBar.value.ToString();
+            npcPositionX.text = npc.transform.position.x.ToString();
+            npcPositionY.text = npc.transform.position.y.ToString();
+            npcAttack.text = AI.aiAttack.ToString();
+        }
 
         if (GameController.playGame == true)
         {
@@ -100,6 +138,20 @@ public class Stats : MonoBehaviour
                 AI.aiSkillsPoint += 2;
                 timerAddSkillPoint = 0;
             }
+        }
+    }
+
+    public void ChangePositionObjetTest()
+    {
+        if (GameManager.Instance.GetRound() == 1 || GameManager.Instance.GetRound() == 3)
+        {
+            playerTest.anchoredPosition = new Vector2(103, 85.79999f);
+            npcTest.anchoredPosition = new Vector2(667, 85.79999f);
+        }
+        if (GameManager.Instance.GetRound() == 2)
+        {
+            playerTest.anchoredPosition = new Vector2(667, 85.79999f);
+            npcTest.anchoredPosition = new Vector2(103, 85.79999f);
         }
     }
 
