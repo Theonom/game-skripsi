@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
     public Player playerScript;
     public AI aiScrpt;
+    public SaveLoadManager saveLoadManager;
 
     [Header("Spawn Point")]
     public Transform spawn1;
@@ -26,7 +27,6 @@ public class GameController : MonoBehaviour
 
     [Header("WinnerInRound")]
     public GameObject panelNextRound;
-
     public Text winnerName;
     public Text round;
 
@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour
     {
         if (Stats.timer <= 0 || Player.playerHealthPoint <= 0 || AI.aiHealthPoint <= 0)
         {
+            saveLoadManager.SaveData();
             if (GameManager.Instance.GetPlayerWinAmount() < 2 && GameManager.Instance.GetAiWinAmount() < 2)
             {
                 panelNextRound.SetActive(true);

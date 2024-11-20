@@ -95,7 +95,14 @@ public class DataAI : MonoBehaviour
 
     public void PlayerAttackInString()
     {
-        playerAttack = Player.playerAttack.ToString();
+        if (Player.playerAttack)
+        {
+            playerAttack = "Menyerang";
+        }
+        else
+        {
+            playerAttack = "Tidak Menyerang";
+        }
     }
 
     public void PositionYInString()
